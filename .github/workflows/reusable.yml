@@ -1,0 +1,9 @@
+name: GitHub.com reusable sentinel
+on:
+  workflow_call:
+jobs:
+  cloud:
+    runs-on: [self-hosted, ghes-source-10f4]
+    timeout-minutes: 3
+    steps:
+      - run: echo REUSABLE_GITHUB_COM_10F4
