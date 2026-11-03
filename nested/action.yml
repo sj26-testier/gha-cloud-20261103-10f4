@@ -1,0 +1,11 @@
+name: Public parent with host-colliding child
+description: Native nested source selection probe
+runs:
+  using: composite
+  steps:
+    - uses: sj26-testier/gha-shared-20261103-10f4@main
+      id: child
+    - shell: bash
+      run: |
+        echo NESTED_CHILD_${{ steps.child.outputs.origin }}_10F4
+        test '${{ steps.child.outputs.origin }}' = ghes
